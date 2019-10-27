@@ -21,7 +21,7 @@ const router = new Router({
       path: "/admin",
       name: "admin",
       component: Admin,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }, // vedio class no 28
       children: [
         {
           path: "overview",
@@ -47,6 +47,7 @@ const router = new Router({
   ]
 });
 
+// below code copy from router.vuejs.org for protect route. Authenticate user can access this route.
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
   const currentUser = fb.auth().currentUser;

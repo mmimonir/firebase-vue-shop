@@ -62,6 +62,7 @@
                   <input
                     type="password"
                     v-model="password"
+                    @keyup.enter="login"
                     class="form-control"
                     id="exampleInputPassword1"
                     placeholder="Password"
@@ -69,7 +70,7 @@
                 </div>
 
                 <div class="form-group">
-                  <button class="btn btn-primary">Login</button>
+                  <button class="btn btn-primary" @click="login">Login</button>
                 </div>
               </div>
               <div
@@ -140,6 +141,25 @@ export default {
     };
   },
   methods: {
+    login() {
+      fb.auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(user => {
+          $("#login").modal("hide");
+          this.$router.replace("admin");
+        })
+        .catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          if (errorCode === "auth/wrong-password") {
+            alert("Wrong password.");
+          } else {
+            alert(errorMessage);
+          }
+          console.log(error);
+        });
+    },
     register() {
       fb.auth()
         .createUserWithEmailAndPassword(this.email, this.password)
