@@ -9,6 +9,11 @@ import "./assets/app.scss";
 import { fb } from "./firebase";
 import VueFirestore from "vue-firestore";
 
+Vue.use(VueFirestore, {
+  key:'id',
+  enumerable:true
+})
+
 import Swal from "sweetalert2";
 window.Swal = Swal;
 

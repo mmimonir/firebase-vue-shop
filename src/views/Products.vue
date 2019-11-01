@@ -33,7 +33,7 @@
                   <td>{{product.name}}</td>
                   <td>{{product.price}}</td>
                   <td>
-                    <button class="btn btn-primary">Edit</button>
+                    <button class="btn btn-primary" @click="editProduct(product)">Edit</button>
                     <button class="btn btn-danger" @click="deleteProduct(product)">Delete</button>
                   </td>
                 </tr>
@@ -75,13 +75,14 @@
                 </div>
 
                 <div class="form-group">
-                  <textarea
+                  <vue-editor v-model="product.description"></vue-editor>
+                  <!-- <textarea
                     name="description"
                     class="form-control"
                     rows="10"
                     placeholder="Product Description"
                     v-model="product.description"
-                  ></textarea>
+                  ></textarea>-->
                 </div>
               </div>
               <!-- product sidebar -->
@@ -100,21 +101,50 @@
 
                 <div class="form-group">
                   <input
+                    @keyup.188="addTag"
                     type="text"
                     placeholder="Product tags"
-                    v-model="product.tag"
+                    v-model="tag"
+                    class="form-control"
+                  />
+                  <div class="d-flex">
+                    <p v-for="tag in product.tags">
+                      <span class="p-1">{{tag}}</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="image">Product Image</label>
+                  <input
+                    name="image"
+                    type="file"
+                    @change="uploadImage"
+                    placeholder="Product tags"
                     class="form-control"
                   />
                 </div>
-                <div class="form-group">
-                  <input type="file" placeholder="Product tags" class="form-control" />
+                <div class="form-group d-flex">
+                  <div v-for="image in product.images" class="p-1">
+                    <img :src="image" alt width="80px" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button @click="addProduct()" type="button" class="btn btn-primary">Save changes</button>
+            <button
+              @click="addProduct()"
+              type="button"
+              class="btn btn-primary"
+              v-if="modal == 'new'"
+            >Save changes</button>
+            <button
+              @click="updateProduct()"
+              type="button"
+              class="btn btn-primary"
+              v-if="modal == 'edit'"
+            >Apply changes</button>
           </div>
         </div>
       </div>
@@ -123,10 +153,14 @@
 </template>
 
 <script>
+import { VueEditor } from "vue2-editor";
 import { fb, db } from "../firebase";
 
 export default {
   name: "Products",
+  components: {
+    VueEditor
+  },
   props: {
     msg: String
   },
@@ -137,10 +171,12 @@ export default {
         name: null,
         description: null,
         price: null,
-        tag: null,
-        image: null
+        tags: [],
+        images: []
       },
-      activeItem: null
+      activeItem: null,
+      modal: null,
+      tag: null
     };
   },
   firestore() {
@@ -149,12 +185,52 @@ export default {
     };
   },
   methods: {
+    addTag() {
+      this.product.tags.push(this.tag);
+      this.tag = "";
+    },
+    uploadImage(e) {
+      if (e.target.files[0]) {
+        let file = e.target.files[0];
+        var storageRef = fb.storage().ref("products/" + file.name);
+        let uploadTask = storageRef.put(file);
+
+        uploadTask.on(
+          "state_changed",
+          snapshot => {},
+          error => {
+            // Handle unsuccessful uploads
+          },
+          () => {
+            // Handle successful uploads on complete
+            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+            uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
+              this.product.images.push(downloadURL);
+              console.log("File available at", downloadURL);
+            });
+          }
+        );
+      }
+    },
     addNew() {
+      this.modal = "new";
       $("#product").modal("show");
     },
 
-    updateProduct() {},
-    editProduct(product) {},
+    updateProduct() {
+      this.$firestore.products.doc(this.product.id).update(this.product);
+      $("#product").modal("hide");
+      Toast.fire({
+        type: "success",
+        title: "Product Updated successfully"
+      });
+    },
+    editProduct(product) {
+      this.modal = "edit";
+      this.product = product;
+      // this.activeItem = product[".key"];
+      $("#product").modal("show");
+    },
     deleteProduct(id) {
       Swal.fire({
         title: "Are you sure?",
@@ -166,7 +242,7 @@ export default {
         confirmButtonText: "Yes, delete it!"
       }).then(result => {
         if (result.value) {
-          this.$firestore.products.doc(id[".key"]).delete();
+          this.$firestore.products.doc(id["id"]).delete();
           Toast.fire({
             type: "success",
             title: "Deleted successfully"
