@@ -127,7 +127,7 @@
 </template>
 
 <script>
-import { fb } from "../firebase";
+import { fb, db } from "../firebase";
 export default {
   name: "Login",
   props: {
@@ -165,6 +165,17 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
           $("#login").modal("hide");
+          db.collection("profiles")
+            .doc(user.user.uid)
+            .set({
+              name: this.name
+            })
+            .then(() => {
+              console.log("Document written");
+            })
+            .catch(error => {
+              console.error("Error", error);
+            });
           this.$router.replace("admin");
         })
         .catch(function(error) {
