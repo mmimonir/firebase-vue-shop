@@ -1,6 +1,6 @@
 <template>
   <div class="add-to-cart">
-    <button class="btn btn-primary">Add to Cart</button>
+    <button class="btn btn-primary" @click="addToCart">Add to Cart</button>
   </div>
 </template>
 
@@ -10,14 +10,25 @@ export default {
   props: {
     name: String,
     price: String,
-    productId: String
+    image: String,
+    pId: String
   },
   data() {
     return {
-      productName: this.name,
-      productPrice: this.price,
-      product_id: this.productId
+      item: {
+        productName: this.name,
+        productImage: this.image,
+        productPrice: this.price,
+        productId: this.pId,
+        productQuantity: 1
+      }
     };
+  },
+  methods: {
+    addToCart() {
+      $("#miniCart").modal("show");
+      this.$store.commit("addToCart", this.item);
+    }
   }
 };
 </script>

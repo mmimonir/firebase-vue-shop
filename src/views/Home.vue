@@ -17,10 +17,8 @@
         </div>
       </div>
     </div>
-    <!-- <login></login> -->
-
-    <!-- <mini-cart></mini-cart> -->
     <Login></Login>
+    <mini-cart></mini-cart>
   </div>
 </template>
 
