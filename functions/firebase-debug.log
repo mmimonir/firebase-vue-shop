@@ -1,0 +1,81 @@
+[debug] [2019-11-29T13:10:12.245Z] ----------------------------------------------------------------------
+[debug] [2019-11-29T13:10:12.247Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\monir\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2019-11-29T13:10:12.248Z] CLI Version:   7.8.1
+[debug] [2019-11-29T13:10:12.248Z] Platform:      win32
+[debug] [2019-11-29T13:10:12.248Z] Node Version:  v10.15.0
+[debug] [2019-11-29T13:10:12.249Z] Time:          Fri Nov 29 2019 19:10:12 GMT+0600 (Bangladesh Standard Time)
+[debug] [2019-11-29T13:10:12.249Z] ----------------------------------------------------------------------
+[debug] [2019-11-29T13:10:12.249Z] 
+[debug] [2019-11-29T13:10:12.260Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-29T13:10:12.261Z] > authorizing via signed-in user
+[debug] [2019-11-29T13:10:12.261Z] [iam] checking project vue-shop-e76c2 for permissions ["firebase.projects.get"]
+[debug] [2019-11-29T13:10:12.263Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/vue-shop-e76c2:testIamPermissions  
+
+[debug] [2019-11-29T13:10:13.665Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-29T13:10:13.667Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/vue-shop-e76c2  
+ 
+[debug] [2019-11-29T13:10:14.115Z] <<< HTTP RESPONSE 200
+[info] +  functions: Using node@10 from host.
+[info] +  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions" for Cloud Functions...
+[debug] [2019-11-29T13:10:15.678Z] [worker-~diagnostic~-cffb7c30-ef05-4033-9eeb-b776afae67e9]: Assigning socketPath: \\?\pipe\F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions\32500
+[debug] [2019-11-29T13:10:15.678Z] [worker-~diagnostic~-cffb7c30-ef05-4033-9eeb-b776afae67e9]: BUSY
+[debug] [2019-11-29T13:10:16.288Z] [runtime-status] [32500] Functions runtime initialized. {"cwd":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions","node_version":"10.15.0"}
+[debug] [2019-11-29T13:10:16.292Z] [runtime-status] [32500] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-11-29T13:10:16.297Z] [runtime-status] [32500] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-29T13:10:16.300Z] [runtime-status] [32500] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-29T13:10:16.301Z] [runtime-status] [32500] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[helloWorld]: http function initialized (http://localhost:5000/vue-shop-e76c2/us-central1/helloWorld).
+[info] +  functions[CheckoutSession]: http function initialized (http://localhost:5000/vue-shop-e76c2/us-central1/CheckoutSession).
+[debug] [2019-11-29T13:10:16.646Z] [worker-~diagnostic~-cffb7c30-ef05-4033-9eeb-b776afae67e9]: exited
+[debug] [2019-11-29T13:10:16.647Z] [worker-~diagnostic~-cffb7c30-ef05-4033-9eeb-b776afae67e9]: FINISHED
+[debug] [2019-11-29T13:20:51.947Z] File F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions\index.js changed, reloading triggers
+[debug] [2019-11-29T13:20:52.958Z] [worker-~diagnostic~-730246c6-a916-49f0-b038-52be40a93381]: Assigning socketPath: \\?\pipe\F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions\32960
+[debug] [2019-11-29T13:20:52.958Z] [worker-~diagnostic~-730246c6-a916-49f0-b038-52be40a93381]: BUSY
+[debug] [2019-11-29T13:20:53.513Z] [runtime-status] [32960] Functions runtime initialized. {"cwd":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions","node_version":"10.15.0"}
+[debug] [2019-11-29T13:20:53.515Z] [runtime-status] [32960] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-11-29T13:20:53.518Z] [runtime-status] [32960] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-29T13:20:53.519Z] [runtime-status] [32960] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-29T13:20:53.520Z] [runtime-status] [32960] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-29T13:20:53.653Z] [worker-~diagnostic~-730246c6-a916-49f0-b038-52be40a93381]: exited
+[debug] [2019-11-29T13:20:53.653Z] [worker-~diagnostic~-730246c6-a916-49f0-b038-52be40a93381]: FINISHED
+[debug] [2019-11-29T13:22:32.851Z] File F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions\index.js changed, reloading triggers
+[debug] [2019-11-29T13:22:33.859Z] [worker-~diagnostic~-bc3e9c62-c302-4238-9507-efb5a48aea0f]: Assigning socketPath: \\?\pipe\F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions\32736
+[debug] [2019-11-29T13:22:33.859Z] [worker-~diagnostic~-bc3e9c62-c302-4238-9507-efb5a48aea0f]: BUSY
+[debug] [2019-11-29T13:22:34.437Z] [runtime-status] [32736] Functions runtime initialized. {"cwd":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions","node_version":"10.15.0"}
+[debug] [2019-11-29T13:22:34.439Z] [runtime-status] [32736] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-11-29T13:22:34.442Z] [runtime-status] [32736] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-29T13:22:34.443Z] [runtime-status] [32736] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-29T13:22:34.444Z] [runtime-status] [32736] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-29T13:22:34.582Z] [worker-~diagnostic~-bc3e9c62-c302-4238-9507-efb5a48aea0f]: exited
+[debug] [2019-11-29T13:22:34.582Z] [worker-~diagnostic~-bc3e9c62-c302-4238-9507-efb5a48aea0f]: FINISHED
+[debug] [2019-11-29T13:37:14.425Z] File F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions\index.js changed, reloading triggers
+[debug] [2019-11-29T13:37:15.432Z] [worker-~diagnostic~-c5be8458-467a-4e36-ab6e-f9c86a673844]: Assigning socketPath: \\?\pipe\F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions\22668
+[debug] [2019-11-29T13:37:15.432Z] [worker-~diagnostic~-c5be8458-467a-4e36-ab6e-f9c86a673844]: BUSY
+[debug] [2019-11-29T13:37:15.974Z] [runtime-status] [22668] Functions runtime initialized. {"cwd":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions","node_version":"10.15.0"}
+[debug] [2019-11-29T13:37:15.976Z] [runtime-status] [22668] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-11-29T13:37:15.980Z] [runtime-status] [22668] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-29T13:37:15.982Z] [runtime-status] [22668] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-29T13:37:15.983Z] [runtime-status] [22668] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-29T13:37:16.143Z] [worker-~diagnostic~-c5be8458-467a-4e36-ab6e-f9c86a673844]: exited
+[debug] [2019-11-29T13:37:16.144Z] [worker-~diagnostic~-c5be8458-467a-4e36-ab6e-f9c86a673844]: FINISHED
+[debug] [2019-11-29T13:38:17.950Z] File F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions\index.js changed, reloading triggers
+[debug] [2019-11-29T13:38:18.982Z] [worker-~diagnostic~-50f81e47-a8ae-420b-a799-d2d70155b51a]: Assigning socketPath: \\?\pipe\F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions\35768
+[debug] [2019-11-29T13:38:18.982Z] [worker-~diagnostic~-50f81e47-a8ae-420b-a799-d2d70155b51a]: BUSY
+[debug] [2019-11-29T13:38:19.528Z] [runtime-status] [35768] Functions runtime initialized. {"cwd":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions","node_version":"10.15.0"}
+[debug] [2019-11-29T13:38:19.530Z] [runtime-status] [35768] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-11-29T13:38:19.534Z] [runtime-status] [35768] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-29T13:38:19.536Z] [runtime-status] [35768] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-29T13:38:19.537Z] [runtime-status] [35768] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-29T13:38:19.683Z] [worker-~diagnostic~-50f81e47-a8ae-420b-a799-d2d70155b51a]: exited
+[debug] [2019-11-29T13:38:19.683Z] [worker-~diagnostic~-50f81e47-a8ae-420b-a799-d2d70155b51a]: FINISHED
+[debug] [2019-11-29T13:38:59.420Z] File F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions\index.js changed, reloading triggers
+[debug] [2019-11-29T13:39:00.444Z] [worker-~diagnostic~-19b3e589-1a98-4094-9f71-32ebddc0c411]: Assigning socketPath: \\?\pipe\F:\PlayList\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\vue-shop\functions\35648
+[debug] [2019-11-29T13:39:00.444Z] [worker-~diagnostic~-19b3e589-1a98-4094-9f71-32ebddc0c411]: BUSY
+[debug] [2019-11-29T13:39:01.040Z] [runtime-status] [35648] Functions runtime initialized. {"cwd":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions","node_version":"10.15.0"}
+[debug] [2019-11-29T13:39:01.042Z] [runtime-status] [35648] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-11-29T13:39:01.045Z] [runtime-status] [35648] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-11-29T13:39:01.047Z] [runtime-status] [35648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-29T13:39:01.048Z] [runtime-status] [35648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"F:\\PlayList\\Vuejs Full-Stack Course (AWS  Firebase) Build E-Commerce Website\\vue-shop\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-11-29T13:39:01.187Z] [worker-~diagnostic~-19b3e589-1a98-4094-9f71-32ebddc0c411]: exited
+[debug] [2019-11-29T13:39:01.187Z] [worker-~diagnostic~-19b3e589-1a98-4094-9f71-32ebddc0c411]: FINISHED
